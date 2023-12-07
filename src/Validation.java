@@ -1,30 +1,33 @@
-public class Validation{
-    public Validation(){
+public class Validation {
 
-    }
+  public Validation() {
+
+  }
 
 
-    public boolean numberWithinRange(int number,int minimum, int maximum){
-        if (number>=minimum && number<=maximum){
-            return true;
+  public static boolean numberWithinRange(int number, int minimum, int maximum) {
+    return number >= minimum && number <= maximum;
+  }
 
-        }
-        return false;
-    }
-    public boolean isBlank(String string){
-        if (string.length()==0){
-            return true;
-        }
-        return false;
-    }
-    public boolean lengthWithinRange(String string, int index1, int index2){
-        int stringLength=string.length();
-        if ((stringLength >= index1 && stringLength <=index2) || (stringLength >= index2 && stringLength <=index1))
-        {
-            return true;
-        }
-        return false;
+  public static boolean isBlank(String string) {
+    return string.length() == 0;
+  }
 
-    }
+  public static boolean isComputer(Player player) {
+    boolean isComputer = player instanceof Computer;
+    return isComputer;
+  }
+
+  public static boolean isHuman(Player player) {
+    boolean isHuman = player instanceof Human;
+    return isHuman;
+  }
+
+  public static boolean lengthWithinRange(String string, int index1, int index2) {
+    int stringLength = string.length();
+    return (stringLength >= index1 && stringLength <= index2) || (stringLength >= index2
+        && stringLength <= index1);
+
+  }
 
 }
